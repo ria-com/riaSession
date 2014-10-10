@@ -16,7 +16,7 @@ riaSession
    }
 ```
 ```bash
-    $ npm insatll
+    $ npm install
 ```
 
 ```js

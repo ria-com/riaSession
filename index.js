@@ -4,7 +4,7 @@
 (function () {
     "use strict";
 
-    var oneDay = 86400000,
+    var oneDay = 86400,
         config = require('config'),
         client = require('co-memcached')(config.session.memcached),
         Cookies = require('cookies'),
@@ -18,18 +18,22 @@
         var sessionStore = {
             get : function *(key) {
                 var data  = yield client.get(sid);
-                if(key && data[key]){
+                if(key){
                     return data[key];
                 }
                 return data;
             },
             save : function *(key, value) {
-                var data = this.get(key);
+                var data  = yield client.get(sid);
+                if(!data){
+                    data = {};
+                }
                 data[key] = value;
 
                 var data  = yield client.set(sid, data, oneDay);
                 return data;
             },
+
             destroy : function *(key) {
                 var data = this.get(key);
                 if(data[key]){

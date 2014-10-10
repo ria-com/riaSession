@@ -18,6 +18,17 @@ riaSession
 ```bash
     $ npm install
 ```
+config.js
+```js
+    passport: {
+        host: 'host to passport',
+        auth: {
+            'user': 'user',
+            'pass': 'pass',
+            'sendImmediately': false
+        }
+    }
+```
 
 ```js
 var riaSession = require('riaSession');

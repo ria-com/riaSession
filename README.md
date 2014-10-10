@@ -1,7 +1,12 @@
 riaSession
-========
+=======
+
+## Requirements
+
+* [node.js](http://nodejs.org/), v0.11.13
 
 ## INSTALL
+
 
 ```js
    "dependencies": {
@@ -19,16 +24,16 @@ var riaSession = require('riaSession');
 app.use(riaSession);
 ```
 
-## USAGE
+## Example
 
-## GET
+###  GET
 
 ```js
 var sess = yield this.req.session.get('sess');
 console.log('first sess-->',sess);
 ```
 
-## SAVE
+###  SAVE
 
 ```js
 var sess = yield this.req.session.save('sess',{'test':1});
@@ -36,7 +41,7 @@ var sess = yield this.req.session.get('sess');
 console.log('new sess-->',sess);
 ```
 
-## DESTOY
+###  DESTOY
 
 ```js
 var sess = yield this.req.session.destroy('sess');

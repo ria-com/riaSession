@@ -4,9 +4,10 @@
 (function () {
     "use strict";
 
-    var oneDay = 86400000;
-    var client = require('co-memcached')(config.session.memcached);
-    var Cookies = require('cookies'),
+    var oneDay = 86400000,
+        config = require('config'),
+        client = require('co-memcached')(config.session.memcached),
+        Cookies = require('cookies'),
         config = require('config');
 
 

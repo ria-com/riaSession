@@ -1,8 +1,18 @@
 riaSession
-====
+========
 
 ## INSTALL
 
+```js
+   "dependencies": {
+    ...
+    "riaSession" : "git://github.com/ria-com/riaSession.git#master"
+    ...
+   }
+```
+```bash
+    $ npm insatll
+```
 
 ```js
 var riaSession = require('riaSession');

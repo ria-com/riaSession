@@ -52,7 +52,7 @@ var sess = yield this.req.session.get('sess');
 console.log('new sess-->',sess);
 ```
 
-###  DESTOY
+###  DESTROY
 
 ```js
 var sess = yield this.req.session.destroy('sess');
